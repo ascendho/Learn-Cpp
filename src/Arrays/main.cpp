@@ -1,11 +1,15 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
 void printNumbers(int[], int);
 
+int find(const int[], int, int);
+
+void sort(int [], int);
+
 int main() {
-    /* Arrays */
 
     // Creating and Initializing Arrays
     cout << "Creating and Initializing Arrays" << endl;
@@ -57,12 +61,65 @@ int main() {
 
     cout << "--------" << endl;
 
-    // fPassing Arrays to Functions
+    // Passing Arrays to Functions
     cout << "Passing Arrays to Functions" << endl;
 
     printNumbers(numbers, size(numbers));
 
     cout << "--------" << endl;
+
+    /* Understanding size_t */
+    cout << "Understanding size_t" << endl;
+
+    // on 64-bit compiler, size_t= unsigned long long
+    // on 32-bit compiler, size_t= unsigned int
+    cout << numeric_limits<long long>::min() << endl;
+    cout << numeric_limits<long long>::max() << endl;
+    cout << numeric_limits<size_t>::min() << endl;
+    cout << numeric_limits<size_t>::max() << endl;
+
+    cout << "--------" << endl;
+
+    // Unpacking Arrays
+    cout << "Unpacking Arrays" << endl;
+
+    int values[3] = {10, 20, 30};
+    auto [x, y, z] = values;
+    cout << x << ", " << y << ", " << z << endl;
+
+    cout << "--------" << endl;
+
+    // Searching Arrays
+    cout << "Searching Arrays" << endl;
+
+    cout << find(numbers, size(numbers), 1) << endl;
+
+    cout << "--------" << endl;
+
+    // Sorting Arrays
+    cout << "Sorting Arrays" << endl;
+
+    int tests[] = {10, 30, 20, -2};
+    sort(tests, size(tests));
+    for (auto test: tests)
+        cout << test << " ";
+
+    cout << endl << "--------" << endl;
+
+    // Multi-dimensional Arrays
+    cout << "Multi-dimensional Arrays" << endl;
+
+    int rows = 2;
+    int columns = 3;
+
+    int matrix[rows][columns] = {
+            {11, 12, 13},
+            {21, 22, 23}
+    };
+
+    for (int row = 0; row < rows; row++)
+        for (int col = 0; col < columns; col++)
+            cout << matrix[row][col] << endl;
 
     return 0;
 }
@@ -70,4 +127,29 @@ int main() {
 void printNumbers(int numbers[], int size) {
     for (int i = 0; i < size; i++)
         cout << numbers[i] << endl;
+}
+
+int find(const int numbers[], int size, int target) {
+    for (int i = 0; i < size; i++)
+        if (target == numbers[i])
+            return i;
+    return -1;
+}
+
+void sort(int numbers[], int size) {
+
+    // double for-loops
+//    for (int i = 0; i < size - 1; i++)
+//        for (int j = 0; j < size - i - 1; j++)
+//            if (numbers[j] > numbers[j + 1])
+//                swap(numbers[j], numbers[j + 1]);
+
+    // single for-loop
+    for (int i = 0; i < size - 1; i++) {
+        if (numbers[i] > numbers[i + 1]) {
+            swap(numbers[i], numbers[i + 1]);
+            i = -1; // 重新开始下一轮比较
+        }
+    }
+
 }
