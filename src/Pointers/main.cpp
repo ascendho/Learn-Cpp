@@ -66,6 +66,79 @@ int main() {
 
     cout << "--------" << endl;
 
+    // Pointer Arithmetic
+    cout << "Pointer Arithmetic" << endl;
+
+    cout << *(ptr_numbers + 1) << " " << ptr_numbers[1] << " " << numbers[1] << endl;
+    cout << *ptr_numbers << endl;
+    ptr_numbers++;
+    cout << *ptr_numbers << endl;
+
+    cout << "--------" << endl;
+
+    // Comparing Pointers
+    cout << "Comparing Pointers" << endl;
+
+    int *ptrLast = &numbers[size(numbers) - 1];
+
+    while (ptrLast >= numbers) {
+        cout << *ptrLast << endl;
+        ptrLast--;
+    }
+
+    cout << "--------" << endl;
+
+    // Dynamic Memory Allocation
+    cout << "Dynamic Memory Allocation" << endl;
+
+    // Store on stack and automatically cleaned up
+    // int numbers[100]
+
+    // Store on Heap (Free Store)
+    // need manual cleaning
+    int *items = new int[5];
+    int *item = new int;
+
+    delete item;
+    delete[] items;
+
+    item = nullptr;
+    items = nullptr;
+
+    cout << "--------" << endl;
+
+    // Dynamically Resizing an Array
+    cout << "Dynamically Resizing an Array" << endl;
+
+    /*
+    int capacity = 5;
+    int entries = 0;
+    items = new int[capacity];
+
+    while (true) {
+        cout << "Number: ";
+        cin >> items[entries];
+        if (cin.fail())break;
+        entries++;
+
+        if (capacity == entries) {
+            capacity *= 2;
+            int *temp = new int[capacity];
+            for (int i = 0; i < entries; i++)
+                temp[i] = items[i];
+            delete[] items;
+            items = temp;
+        }
+    }
+
+    for (int i = 0; i < entries; i++)
+        cout << items[i] << endl;
+
+    delete[] items;
+    */
+
+    cout << "--------" << endl;
+
 
     return 0;
 }
