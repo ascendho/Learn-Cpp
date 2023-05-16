@@ -2,4 +2,5 @@
 
 ## Progress tracking
 
-- [ ] <a href="src/Arrays">Arrays</a>
+- [x] <a href="src/Arrays">Arrays</a>
+- [ ] 

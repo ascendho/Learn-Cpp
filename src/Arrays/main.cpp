@@ -3,11 +3,16 @@
 
 using namespace std;
 
+const int rows = 2;
+const int columns = 3;
+
 void printNumbers(int[], int);
 
 int find(const int[], int, int);
 
 void sort(int [], int);
+
+void printMatrix(int [rows][columns]);
 
 int main() {
 
@@ -68,7 +73,7 @@ int main() {
 
     cout << "--------" << endl;
 
-    /* Understanding size_t */
+    // Understanding size_t
     cout << "Understanding size_t" << endl;
 
     // on 64-bit compiler, size_t= unsigned long long
@@ -109,17 +114,16 @@ int main() {
     // Multi-dimensional Arrays
     cout << "Multi-dimensional Arrays" << endl;
 
-    int rows = 2;
-    int columns = 3;
 
     int matrix[rows][columns] = {
             {11, 12, 13},
             {21, 22, 23}
     };
 
-    for (int row = 0; row < rows; row++)
-        for (int col = 0; col < columns; col++)
-            cout << matrix[row][col] << endl;
+    printMatrix(matrix);
+
+    cout << endl << "--------" << endl;
+
 
     return 0;
 }
@@ -151,5 +155,10 @@ void sort(int numbers[], int size) {
             i = -1; // 重新开始下一轮比较
         }
     }
+}
 
+void printMatrix(int matrix[rows][columns]) {
+    for (int row = 0; row < rows; row++)
+        for (int col = 0; col < columns; col++)
+            cout << matrix[row][col] << endl;
 }
