@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -139,8 +140,49 @@ int main() {
 
     cout << "--------" << endl;
 
+    // Smart Pointers
+    cout << "Smart Pointers" << endl;
 
+
+    cout << "--------" << endl;
+
+    // Working with Unique Pointers
+    cout << "Working with Unique Pointers" << endl;
+
+    unique_ptr<int> uniqueX(new int);
+    *uniqueX = 10;
+
+    cout << uniqueX << " " << *uniqueX << endl;
+
+    unique_ptr<int> uniqueY = make_unique<int>();
+    // or
+    // auto uniqueY = make_unique<int>();
+
+    cout << uniqueY << endl;
+
+    unique_ptr<int[]> uniqueArr = make_unique<int[]>(5);
+    uniqueArr[0] = 55;
+
+    cout << uniqueArr << " " << uniqueArr[0] << endl;
+
+    cout << "--------" << endl;
+
+    // Working with Shared Pointers
+    cout << "Working with Shared Pointers" << endl;
+
+    auto sharedX = make_shared<int>();
+    *sharedX = 10;
+
+    shared_ptr<int> sharedY(sharedX);
+
+    cout << sharedX << " " << *sharedX << endl;
+    cout << sharedY << " " << *sharedY << endl;
+    cout << boolalpha << (sharedX == sharedY) << endl;
+
+    cout << "--------" << endl;
+    
     return 0;
+
 }
 
 void increasePrice(double *price) {
