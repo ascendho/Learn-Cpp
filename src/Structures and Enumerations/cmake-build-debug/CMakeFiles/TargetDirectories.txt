@@ -1,0 +1,3 @@
+D:/Udemy/C++/repo/src/Structures and Enumerations/cmake-build-debug/CMakeFiles/Structures_and_Enumerations.dir
+D:/Udemy/C++/repo/src/Structures and Enumerations/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Udemy/C++/repo/src/Structures and Enumerations/cmake-build-debug/CMakeFiles/rebuild_cache.dir
