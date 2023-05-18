@@ -127,9 +127,50 @@ int main() {
 
     string customerNumber = "AB1234";
     cout << isValid(customerNumber) << endl;
-    
+
     cout << "--------" << endl;
 
+    // String_Numeric Conversion Functions
+    cout << "String_Numeric Conversion Functions" << endl;
+
+    double price = stod("19.99");
+    cout << price << endl;
+
+    string str = to_string(19.99);
+    cout << str << endl;
+
+    cout << "--------" << endl;
+
+    // Escape Sequences
+    cout << "Escape Sequences" << endl;
+
+    string escapeSeq = "c:\\my folder";
+    cout << escapeSeq << endl;
+
+    escapeSeq = "\"Hello World\"";
+    cout << escapeSeq << endl;
+
+    escapeSeq = "'Hello World'";
+    cout << escapeSeq << endl;
+
+    char ch = '\'';
+    cout << ch << endl;
+
+    escapeSeq = "Hello\n World";
+    cout << escapeSeq << endl;
+
+    escapeSeq = "Hello\tWorld";
+    cout << escapeSeq << endl;
+
+    cout << "--------" << endl;
+
+    // Raw Strings
+    cout << "Raw Strings" << endl;
+
+    string path = R"("c:\folderA\folderB\file.txt")";
+    cout << path << endl;
+
+    cout << "--------" << endl;
 
     return 0;
 }
