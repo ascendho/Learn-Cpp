@@ -29,16 +29,70 @@ struct Film {
     Date releaseDate;
     bool isPopular;
 
-    [[nodiscard]] bool equals(const Film &film) const  {
-        return this->title == film.title;
+    [[nodiscard]] bool equals(const Film &film) const {
+        return (this->title == film.title &&
+                this->releaseDate.year == film.releaseDate.year &&
+                this->releaseDate.month == film.releaseDate.month &&
+                this->releaseDate.day == film.releaseDate.day);
     }
+
+    //    [[nodiscard]] bool operator==(const Film &film) const {
+    //        return (this->title == film.title &&
+    //                this->releaseDate.year == film.releaseDate.year &&
+    //                this->releaseDate.month == film.releaseDate.month &&
+    //                this->releaseDate.day == film.releaseDate.day);
+    //    }
 };
+
+// we can do it outside (recommended)
+
+bool operator==(const Film &first, const Film &second) {
+    return (
+            first.title == second.title &&
+            first.releaseDate.year == second.releaseDate.year &&
+            first.releaseDate.month == second.releaseDate.month &&
+            first.releaseDate.day == second.releaseDate.day
+    );
+}
+
+ostream &operator<<(ostream &stream, const Film &film) {
+    stream << film.title << film.releaseDate.year;
+    return stream;
+}
 
 struct Customer {
     int id;
     string name;
     string email;
     Address address;
+};
+
+struct Point {
+    int x;
+    int y;
+};
+
+bool operator==(const Point &first, const Point &second) {
+    return (
+            first.x == second.x &&
+            first.y == second.y
+    );
+}
+
+ostream &operator<<(ostream &stream, const Point &point) {
+    return stream << "(" << point.x << "," << point.y << ")";
+}
+
+Movie getMovie();
+
+void showMovie(Movie &);
+
+void showMovie(Movie *);
+
+enum Action {
+    List = 1,
+    Add,
+    Update
 };
 
 int main() {
@@ -145,5 +199,73 @@ int main() {
 
     cout << "--------" << endl;
 
+    // Operator Overloading
+    cout << "Operator Overloading" << endl;
+
+    if (film1 == film2)
+        cout << "Equal" << endl;
+
+    cout << film1 << endl;
+
+    Point A(1, 2), B(2, 3);
+
+    cout << (A == B) << endl;
+
+    if (A == B)
+        cout << "Equal" << endl;
+    else
+        cout << "Not equal" << endl;
+
+    cout << A << " " << B << endl;
+
+    cout << "--------" << endl;
+
+    // Structures and Functions
+    cout << "Structures and Functions" << endl;
+
+    movie = getMovie();
+    showMovie(movie);
+
+    cout << "--------" << endl;
+
+    // Pointers to Structures
+    cout << "Pointers to Structures" << endl;
+
+    showMovie(&movie);
+
+    cout << "--------" << endl;
+
+    // Defining Enumerations
+    cout << "Defining Enumerations" << endl;
+
+    int input = 1;
+
+    if (input == Action::List)
+        cout << "List invoices" << endl;
+
+    cout << "--------" << endl;
+
+    // Strongly Typed Enumerations
+    cout << "Strongly Typed Enumerations" << endl;
+
+
+    cout << "--------" << endl;
+
     return 0;
+}
+
+
+Movie getMovie() {
+    return {
+            "Terminator", "1984"
+    };
+}
+
+void showMovie(Movie &movie) {
+    cout << movie.title << endl;
+}
+
+void showMovie(Movie *movie) {
+    cout << (*movie).title << endl;
+    cout << movie->releaseYear << endl;
 }
