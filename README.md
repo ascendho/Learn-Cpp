@@ -5,4 +5,4 @@
 - [x] <a href="src/Arrays">Arrays</a>
 - [x] <a href="src/Pointers">Pointers</a>
 - [x] <a href="src/Strings">Strings</a>
-- [ ] <a href="src/Structures and Enumerations">Structures and Enumerations</a>
+- [x] <a href="src/Structures and Enumerations">Structures and Enumerations</a>

@@ -95,6 +95,12 @@ enum Action {
     Update
 };
 
+enum class Operation {
+    List = 1,
+    Add,
+    Update
+};
+
 int main() {
 
     // Defining Structures
@@ -248,6 +254,8 @@ int main() {
     // Strongly Typed Enumerations
     cout << "Strongly Typed Enumerations" << endl;
 
+    if (input == static_cast<int>(Operation::List))
+        cout << "List invoices" << endl;
 
     cout << "--------" << endl;
 
