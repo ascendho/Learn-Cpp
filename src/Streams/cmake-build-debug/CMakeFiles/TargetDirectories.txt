@@ -1,0 +1,3 @@
+D:/Udemy/C++/repo/src/Streams/cmake-build-debug/CMakeFiles/Streams.dir
+D:/Udemy/C++/repo/src/Streams/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Udemy/C++/repo/src/Streams/cmake-build-debug/CMakeFiles/rebuild_cache.dir
