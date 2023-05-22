@@ -1,0 +1,10 @@
+# ninja log v5
+14	892	7064661285400822	CMakeFiles/Classes.dir/main.cpp.obj	17f551e36f69084f
+6	810	7064661284580677	CMakeFiles/Classes.dir/Rectangle.cpp.obj	7ac2bac36a2dc990
+13	890	7064652070019404	CMakeFiles/Classes.dir/TextBox.cpp.obj	72f5cdfeceb280e7
+893	1177	7064661288204719	Classes.exe	145e57e9aba8f480
+15	135	7064730890438909	CMakeFiles/Classes.dir/Person.cpp.obj	4205d610f6abcaf4
+10	750	7064730896631498	CMakeFiles/Classes.dir/Rectangle.cpp.obj	803a7eaae08d99d3
+4	818	7064730897332834	CMakeFiles/Classes.dir/main.cpp.obj	5d646b3a82da2c3b
+22	824	7064730897392936	CMakeFiles/Classes.dir/TextBox.cpp.obj	3e39fe4c4660b5c6
+825	1023	7064730899293166	Classes.exe	aa1a252a4a0e9866
