@@ -43,4 +43,27 @@ Rectangle::Rectangle(int width, int height) {
     setHeight(height);
 }
 
+Rectangle::Rectangle(int width, int height, const string &color) : Rectangle(width, height) {
+    this->color = color;
+}
+
+Rectangle::Rectangle(const Rectangle &source) {
+    cout << "Copied!" << endl;
+    this->height = source.height;
+    this->width = source.width;
+    this->color = source.color;
+}
+
+const string &Rectangle::getColor() const {
+    return color;
+}
+
+void Rectangle::setColor(const string &color) {
+    Rectangle::color = color;
+}
+
+Rectangle::~Rectangle() {
+    cout << "Destructor is called!" << endl;
+}
+
 

@@ -7,6 +7,8 @@ using namespace std;
 
 void showPerson(Person);
 
+void showRectangle(Rectangle);
+
 int main() {
 
     // Defining a Class
@@ -71,9 +73,42 @@ int main() {
 
     cout << "--------" << endl;
 
+    // Constructor Delegation
+    cout << "Constructor Delegation" << endl;
+
+    Rectangle rectangleWithColor{10, 20, "blue"};
+
+    cout << "--------" << endl;
+
+    // The Copy Constructor
+    cout << "The Copy Constructor" << endl;
+
+    Rectangle one = {10, 20};
+    Rectangle two = one;
+
+    // this one is different
+    rectangle = rectangleWithColor;
+    cout << rectangle.getColor() << endl;
+
+    // rectangleWithColor is copied to parameter rectangle
+    showRectangle(rectangleWithColor);
+
+    cout << "--------" << endl;
+
+    // The Destructor
+    cout << "The Destructor" << endl;
+
+
+
+    cout << "--------" << endl;
+
     return 0;
 }
 
-void showPerson(Person person){
+void showPerson(Person person) {
+
+}
+
+void showRectangle(Rectangle rectangle) {
 
 }
