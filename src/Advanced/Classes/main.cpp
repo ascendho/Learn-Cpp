@@ -98,9 +98,25 @@ int main() {
     // The Destructor
     cout << "The Destructor" << endl;
 
+    cout << "--------" << endl;
 
+    // Static Members
+    cout << "Static Members" << endl;
+
+    cout << Rectangle::getObjectsCount() << endl;
 
     cout << "--------" << endl;
+
+    // Constant Objects and Functions
+    cout << "Constant Objects and Functions" << endl;
+
+    cout << "--------" << endl;
+
+    // Pointer to Objects
+    cout<<"Pointer to Objects"<<endl;
+
+    cout << "--------" << endl;
+
 
     return 0;
 }

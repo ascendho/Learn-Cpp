@@ -8,6 +8,7 @@ using namespace std;
 class Rectangle {
 
 public:
+
     Rectangle(int width, int height);
 
     Rectangle(int width, int height, const string &color);
@@ -15,17 +16,18 @@ public:
 
     Rectangle() = default;
 
-    Rectangle(const Rectangle& source);
+    Rectangle(const Rectangle &source);
 
-    void draw();
+    void draw() const;
 
-    int getArea();
+    int getArea() const;
 
     int getWidth() const;
 
+    int getHeight() const;
+
     void setWidth(int width);
 
-    int getHeight() const;
 
     void setHeight(int height);
 
@@ -35,11 +37,15 @@ public:
 
     virtual ~Rectangle();
 
+    static int getObjectsCount();
+
+
 private:
     int width = 0;
     int height = 0;
     string color;
 
+    static int objectsCount;
 
 };
 

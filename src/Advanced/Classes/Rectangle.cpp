@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void Rectangle::draw() {
+void Rectangle::draw() const{
     cout << "Drawing a rectangle" << endl;
     cout << "Dimensions: " << width << ", " << height << endl;
 }
 
-int Rectangle::getArea() {
+int Rectangle::getArea() const{
     return width * height;
 }
 
@@ -39,6 +39,7 @@ void Rectangle::setHeight(int height) {
 //}
 
 Rectangle::Rectangle(int width, int height) {
+    objectsCount++;
     setWidth(width);
     setHeight(height);
 }
@@ -63,7 +64,12 @@ void Rectangle::setColor(const string &color) {
 }
 
 Rectangle::~Rectangle() {
-    cout << "Destructor is called!" << endl;
+//    cout << "Destructor is called!" << endl;
 }
 
 
+int Rectangle::objectsCount=0;
+
+int Rectangle::getObjectsCount() {
+    return objectsCount;
+}
