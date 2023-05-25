@@ -7,4 +7,4 @@
 - [x] <a href="src/Intermediate/Strings">Strings</a>
 - [x] <a href="src/Intermediate/Structures and Enumerations">Structures and Enumerations</a>
 - [x] <a href="src/Intermediate/Streams">Streams</a>
-- [ ] <a href="src/Advanced/Classes">Classes</a>
+- [x] <a href="src/Advanced/Classes">Classes</a>

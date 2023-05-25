@@ -1,7 +1,9 @@
 #include <iostream>
+#include <memory>
 #include "Rectangle.h"
 #include "TextBox.h"
 #include "Person.h"
+#include "SmartPointer.h"
 
 using namespace std;
 
@@ -113,7 +115,26 @@ int main() {
     cout << "--------" << endl;
 
     // Pointer to Objects
-    cout<<"Pointer to Objects"<<endl;
+    cout << "Pointer to Objects" << endl;
+
+    auto rectanglePtr = make_unique<Rectangle>(10, 20);
+    rectanglePtr->draw();
+
+    SmartPointer ptr{new int};
+
+    cout << "--------" << endl;
+
+    // Array of Objects
+    cout << "Array of Objects" << endl;
+
+    Rectangle rectangles[] = {
+            {},
+            {10, 20},
+            {10, 20, "blue"}
+    };
+
+    for (auto &rect: rectangles)
+        rect.draw();
 
     cout << "--------" << endl;
 
