@@ -21,3 +21,8 @@ void Point::setY(int y) {
 }
 
 Point::Point(int x, int y) : x(x), y(y) {}
+
+ostream &operator<<(ostream &stream, const Point &point) {
+    stream << point.getX() << "," << point.getY();
+    return stream;
+}

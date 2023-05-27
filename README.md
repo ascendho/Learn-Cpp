@@ -8,3 +8,4 @@
 - [x] <a href="src/Intermediate/Structures and Enumerations">Structures and Enumerations</a>
 - [x] <a href="src/Intermediate/Streams">Streams</a>
 - [x] <a href="src/Advanced/Classes">Classes</a>
+- [ ] <a href="src/Advanced/Operator Overloading">Operator Overloading</a>
